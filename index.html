@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>🍚 메뉴 고르기 귀찮을 때</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      body {
+        font-family: sans-serif;
+        text-align: center;
+        margin-top: 100px;
+        background-color: #78f0c5;
+      }
+      h1 {
+        font-size: 36px;
+        margin-bottom: 10px;
+      }
+      h2 {
+        font-size: 20px;
+        color: gray;
+        margin-bottom: 30px;
+      }
+      button {
+        font-size: 18px;
+        padding: 12px 24px;
+        cursor: pointer;
+      }
+      p {
+        font-size: 22px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+      }
+      .menu-links {
+        margin-top: 20px;
+        font-size: 2.8em;
+        line-height: 1.4;
+      }
+      .menu-links a {
+        text-decoration: underline;
+        color: black;
+      }
+      #menu-list {
+        font-size: 18px;
+        margin-top: 20px;
+      }
+      #menu-list ul {
+        list-style: none;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🍽️ 오늘의 메뉴는 뭘까요? (링크 공유 가능) made by BaeHun,Jo</h1>
+    <h2>승우는 아가야</h2>
+
+    <button onclick="recommend()">클릭하면 메뉴가 나와용</button>
+    <p id="result">클릭 ㄱㄱ</p>
+
+    <!-- 전체 메뉴 보기 버튼 -->
+    <p><button id="toggle-button" onclick="toggleMenuList()">전체 메뉴 보기</button></p>
+
+    <!-- 전체 메뉴 리스트 (토글 영역) -->
+    <div id="menu-list" style="display: none;">
+      <ul id="menu-items"></ul>
+    </div>
+
+    <!-- 한양대 식당 링크 -->
+    <div class="menu-links">
+      <p><strong>🔗 학교 식당 메뉴 보기:</strong></p>
+      <p><a href="https://www.hanyang.ac.kr/web/www/re11" target="_blank">교직원 식당 메뉴</a></p>
+      <p><a href="https://www.hanyang.ac.kr/web/www/re15" target="_blank">창업보육센터 식당 메뉴</a></p>
+    </div>
+
+    <!-- 👇 추가된 피드백 버튼과 영역 -->
+    <p><button id="feedback-toggle" onclick="toggleFeedback()">메뉴가 너무 감다뒤에요 ㅠㅠ</button></p>
+    <div id="feedback-section" style="display: none; font-size: 18px; margin-bottom: 50px;">
+      메일: <strong>jbh12132@hanyang.ac.kr</strong><br />
+      카톡 ID: <strong>jbh12132</strong>
+    </div>
+
+    <!-- JS 로직 -->
+    <script src="script.js"></script>
+    <script>
+      function toggleFeedback() {
+        const section = document.getElementById("feedback-section");
+        const button = document.getElementById("feedback-toggle");
+
+        if (section.style.display === "none") {
+          section.style.display = "block";
+          button.innerText = "건전한 피드백 환영";
+        } else {
+          section.style.display = "none";
+          button.innerText = "메뉴가 너무 감다뒤에요 ㅠㅠ";
+        }
+      }
+    </script>
+  </body>
+</html>

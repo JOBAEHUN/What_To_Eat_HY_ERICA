@@ -15,7 +15,8 @@ function recommend() {
   const result = document.getElementById("result");
   const button = document.querySelector("button");
 
-  result.innerHTML = `<span style="font-size: 2.2em;"><strong>${pick} ㄱㄱ</strong></span>`;
+  // 'ㄱㄱ' 제거: 식당 이름만 표시하도록 수정
+  result.innerHTML = `<strong>${pick}</strong>`;
   button.innerText = "다시 돌리기";
 }
 

@@ -38,7 +38,7 @@
       #result {
         margin-top: 50px;
         margin-bottom: 50px;
-        font-size: 2.5em;
+        font-size: 1.4em; /* 글자 크기 축소 */
       }
       .menu-links {
         margin-top: 20px;
@@ -82,27 +82,9 @@
       <p><a id="menu-link" href="https://www.hanyang.ac.kr/web/www/re12" target="_blank"><button>식당 메뉴 바로가기</button></a></p>
     </div>
 
-    <!-- 👇 추가된 피드백 버튼과 영역 -->
-    <p><button id="feedback-toggle" onclick="toggleFeedback()">메뉴가 너무 별로에요</button></p>
-    <div id="feedback-section" style="display: none; font-size: 18px; margin-bottom: 50px;">
-      메일: <strong>jbh12132@hanyang.ac.kr</strong><br />
-    </div>
+    <!-- 피드백 버튼(‘메뉴가 너무 별로에요’) 제거 -->
 
     <!-- JS 로직 -->
     <script src="script.js"></script>
-    <script>
-      function toggleFeedback() {
-        const section = document.getElementById("feedback-section");
-        const button = document.getElementById("feedback-toggle");
-
-        if (section.style.display === "none") {
-          section.style.display = "block";
-          button.innerText = "연락주세요";
-        } else {
-          section.style.display = "none";
-          button.innerText = "메뉴가 너무 별로에요";
-        }
-      }
-    </script>
   </body>
 </html>

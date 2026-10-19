@@ -77,11 +77,14 @@
       <ul id="menu-items"></ul>
     </div>
 
-    <!-- 한양대 식당 링크 -->
+    <!-- 한양대 식당 링크 - 하나의 버튼으로 통합 -->
     <div class="menu-links">
-      <p><a href="https://www.hanyang.ac.kr/web/www/re12" target="_blank">🔗학생식당 메뉴</a></p>
-      <p><a href="https://www.hanyang.ac.kr/web/www/re11" target="_blank">🔗교직원식당 메뉴</a></p>
-      <p><a href="https://www.hanyang.ac.kr/web/www/re15" target="_blank">🔗창업보육센터 메뉴</a></p>
+      <p><button id="links-toggle" onclick="toggleLinks()">식당 메뉴 바로가기</button></p>
+      <div id="links-list" style="display: none; font-size: 0.6em; margin-top: 10px; line-height: 1.6;">
+        <p><a href="https://www.hanyang.ac.kr/web/www/re12" target="_blank">🔗학생식당 메뉴</a></p>
+        <p><a href="https://www.hanyang.ac.kr/web/www/re11" target="_blank">🔗교직원식당 메뉴</a></p>
+        <p><a href="https://www.hanyang.ac.kr/web/www/re15" target="_blank">🔗창업보육센터 메뉴</a></p>
+      </div>
     </div>
 
     <!-- 👇 추가된 피드백 버튼과 영역 -->
@@ -103,6 +106,19 @@
         } else {
           section.style.display = "none";
           button.innerText = "메뉴가 너무 별로에요";
+        }
+      }
+
+      function toggleLinks() {
+        const list = document.getElementById("links-list");
+        const btn = document.getElementById("links-toggle");
+
+        if (list.style.display === "none") {
+          list.style.display = "block";
+          btn.innerText = "메뉴 바로가기 닫기";
+        } else {
+          list.style.display = "none";
+          btn.innerText = "식당 메뉴 바로가기";
         }
       }
     </script>
